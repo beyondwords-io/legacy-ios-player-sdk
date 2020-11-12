@@ -1,0 +1,97 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.3 (swiftlang-1200.0.29.2 clang-1200.0.30.1)
+// swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name SpeechKit
+import AVFoundation
+import Foundation
+import MediaPlayer
+@_exported import SpeechKit
+import Swift
+import UIKit
+public enum PlayerError : Swift.Error {
+  case invalidArticle
+  case invalidUrl
+  case invalidArticleMedia
+  public static func == (a: SpeechKit.PlayerError, b: SpeechKit.PlayerError) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers final public class Player : ObjectiveC.NSObject {
+  public enum State {
+    case unknown
+    case readyToPlay
+    case buffering
+    case failed(Swift.Error)
+    case paused
+    case playing
+  }
+  public struct Config {
+    public init(projectId: Swift.String, articleId: SpeechKit.ArticleIdentifier)
+  }
+  final public var state: SpeechKit.Player.State {
+    get
+    set
+  }
+  weak final public var delegate: SpeechKit.PlayerDelegate?
+  public static let shared: SpeechKit.Player
+  @objc override convenience dynamic public init()
+  @objc deinit
+}
+extension Player {
+  final public func loadArticle(with config: SpeechKit.Player.Config)
+  final public var currentTime: Swift.Double {
+    get
+  }
+  final public var duration: Swift.Double {
+    get
+  }
+  final public var isPlaying: Swift.Bool {
+    get
+  }
+  final public func play()
+  final public func pause()
+  final public func seek(to seconds: Swift.Double)
+}
+public enum SpeechKitApiError : Swift.Error {
+  case invalidReponse
+  case authenticationError
+  case badRequest
+  case decodableError
+  public static func == (a: SpeechKit.SpeechKitApiError, b: SpeechKit.SpeechKitApiError) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+public protocol PlayerDelegate : AnyObject {
+  func player(player: SpeechKit.Player, changedState state: SpeechKit.Player.State)
+  func player(player: SpeechKit.Player, updatedProgression time: Foundation.TimeInterval, duration: Foundation.TimeInterval)
+  func playerDidPlayToEnd(_ player: SpeechKit.Player)
+}
+extension PlayerDelegate {
+  public func player(player: SpeechKit.Player, changedState state: SpeechKit.Player.State)
+  public func player(player: SpeechKit.Player, updatedProgression time: Foundation.TimeInterval, duration: Foundation.TimeInterval)
+  public func playerDidPlayToEnd(_ player: SpeechKit.Player)
+}
+public struct Article : Swift.Decodable {
+  public struct Podcast : Swift.Decodable {
+    public init(from decoder: Swift.Decoder) throws
+  }
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct Media : Swift.Decodable {
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct Voice : Swift.Decodable {
+  public init(from decoder: Swift.Decoder) throws
+}
+public enum ArticleIdentifier {
+  case url(Swift.String)
+  case podcastId(Swift.String)
+  case externalId(Swift.String)
+}
+extension SpeechKit.PlayerError : Swift.Equatable {}
+extension SpeechKit.PlayerError : Swift.Hashable {}
+extension SpeechKit.SpeechKitApiError : Swift.Equatable {}
+extension SpeechKit.SpeechKitApiError : Swift.Hashable {}
