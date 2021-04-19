@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'SpeechKit'
-  s.version = '1.0.3'
+  s.version = '1.0.4'
   s.license = 'Propietary'
   s.summary = 'SpeechKit iOS SDK'
   s.homepage = 'https://speechkit.io/'
