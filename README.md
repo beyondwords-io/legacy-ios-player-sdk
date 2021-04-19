@@ -4,7 +4,7 @@
 
 ```ruby
 # CocoaPods
-pod 'SpeechKit', :git => 'https://github.com/SpeechKit/speechkit-ios-sdk-public'
+pod "SpeechKit", "~> 0.0.1"
 ```
 
 ## Usage
@@ -22,24 +22,55 @@ Set the delegate for the player.
 SpeechKit.Player.shared.delegate = self
 ```
 
-Set up an article 
+
+### Fetching an article 
 
 ``` Swift
 let config = SpeechKit.Player.Config(
     projectId: "123",
     articleId: .podcastId("123")
 )
-SpeechKit.Player.shared.loadArticle(with: config)
+SpeechKit.Player.shared.getArticle(with: config) { result in
+   switch result {
+   case .success(let article):
+       //Article has been fetched
+   case .failure(let error):
+       //Handle error
+   }
+}
 ```
 
-Play/pause the article
+
+### Article status
+
+Some articles won't be ready to be played once fetched, we can check the article state before trying to playing them:
+canBePlayed checks the status of the media and if the article contains a valid media url.
 
 ``` Swift
-SpeechKit.Player.shared.play()
+if article.canBePlayed {
+    SpeechKit.Player.shared.playArticle(article: article, shouldAutoPlay: true)
+}
+```
+
+
+### Playing an article
+
+if shouldAutoPlay is true, the player will start automatically playing the article as soon as it starts loading the buffer.
+
+``` Swift
+SpeechKit.Player.shared.playArticle(article: article, shouldAutoPlay: true)
+```
+
+
+### Resume/pause the article
+
+``` Swift
+SpeechKit.Player.shared.resume()
 SpeechKit.Player.shared.pause()
 ```
 
-Getting the progress and events.
+
+### Getting the progress and events.
 
 ``` Swift
 extension ViewController: SpeechKit.PlayerDelegate {
