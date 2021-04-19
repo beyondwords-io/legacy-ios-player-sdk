@@ -29,6 +29,9 @@ public enum PlayerError : Swift.Error {
   public struct Config {
     public init(projectId: Swift.String, articleId: SpeechKit.ArticleIdentifier)
   }
+  final public var currentArticle: SpeechKit.Article? {
+    get
+  }
   final public var state: SpeechKit.Player.State {
     get
     set
@@ -39,7 +42,8 @@ public enum PlayerError : Swift.Error {
   @objc deinit
 }
 extension Player {
-  final public func loadArticle(with config: SpeechKit.Player.Config)
+  final public func getArticle(with config: SpeechKit.Player.Config, completion: @escaping (Swift.Result<SpeechKit.Article, Swift.Error>) -> Swift.Void)
+  final public func playArticle(article: SpeechKit.Article, shouldAutoPlay: Swift.Bool = false)
   final public var currentTime: Swift.Double {
     get
   }
@@ -49,7 +53,7 @@ extension Player {
   final public var isPlaying: Swift.Bool {
     get
   }
-  final public func play()
+  final public func resume()
   final public func pause()
   final public func seek(to seconds: Swift.Double)
 }
@@ -76,11 +80,47 @@ extension PlayerDelegate {
 }
 public struct Article : Swift.Decodable {
   public struct Podcast : Swift.Decodable {
+    public let podcast_id: Swift.Int?
+    public let title: Swift.String
+    public let author: Swift.String
+    public let image: Foundation.URL?
+    public var defaultMedia: SpeechKit.Media? {
+      get
+    }
+    public var isMediaProcessed: Swift.Bool {
+      get
+    }
     public init(from decoder: Swift.Decoder) throws
+  }
+  public let projectId: Swift.Int
+  public let podcast: SpeechKit.Article.Podcast
+  public var canBePlayed: Swift.Bool {
+    get
+  }
+  public var hasPodcastURL: Swift.Bool {
+    get
   }
   public init(from decoder: Swift.Decoder) throws
 }
 public struct Media : Swift.Decodable {
+  public enum State : Swift.String, Swift.Codable {
+    case unprocessed
+    case processed
+    case processing
+    case scheduled
+    case skipped
+    case handled
+    case error
+    public typealias RawValue = Swift.String
+    public init?(rawValue: Swift.String)
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public let state: SpeechKit.Media.State
+  public var isStream: Swift.Bool {
+    get
+  }
   public init(from decoder: Swift.Decoder) throws
 }
 public struct Voice : Swift.Decodable {
@@ -95,3 +135,6 @@ extension SpeechKit.PlayerError : Swift.Equatable {}
 extension SpeechKit.PlayerError : Swift.Hashable {}
 extension SpeechKit.SpeechKitApiError : Swift.Equatable {}
 extension SpeechKit.SpeechKitApiError : Swift.Hashable {}
+extension SpeechKit.Media.State : Swift.Equatable {}
+extension SpeechKit.Media.State : Swift.Hashable {}
+extension SpeechKit.Media.State : Swift.RawRepresentable {}
