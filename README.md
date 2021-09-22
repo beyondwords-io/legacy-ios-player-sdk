@@ -4,7 +4,7 @@
 
 ```ruby
 # CocoaPods
-pod "SpeechKit", "~> 1.0.7"
+pod "SpeechKit", :git => "https://github.com/SpeechKit/speechkit-ios-sdk-public.git"
 ```
 
 ## Usage
