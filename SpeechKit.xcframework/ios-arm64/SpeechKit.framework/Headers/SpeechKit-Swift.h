@@ -188,7 +188,9 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
+@import CoreGraphics;
 @import ObjectiveC;
+@import UIKit;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -213,6 +215,17 @@ SWIFT_CLASS("_TtC9SpeechKit6Player")
 @end
 
 
+
+
+
+
+@class NSCoder;
+
+SWIFT_CLASS("_TtC9SpeechKit10PlayerView")
+@interface PlayerView : UIView
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
+@end
 
 
 

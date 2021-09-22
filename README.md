@@ -4,7 +4,7 @@
 
 ```ruby
 # CocoaPods
-pod "SpeechKit", "~> 0.0.1"
+pod "SpeechKit", "~> 1.0.7"
 ```
 
 ## Usage
@@ -22,6 +22,24 @@ Set the delegate for the player.
 SpeechKit.Player.shared.delegate = self
 ```
 
+OR [optional]: using the built-in Speechkit UI:
+
+First place a PlayerView (UIView sublass) into your view heirachy (eg. via interface builder). Then:
+``` Swift
+    
+    @IBOutlet weak var playerView: PlayerView!
+
+    ...
+
+override func viewDidLoad() {
+    super.viewDidLoad()
+
+    SpeechKit.Player.shared.delegate = playerView
+
+    ...
+
+}
+```
 
 ### Fetching an article 
 

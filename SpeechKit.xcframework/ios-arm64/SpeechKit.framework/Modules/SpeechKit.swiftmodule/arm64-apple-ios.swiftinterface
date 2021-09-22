@@ -14,6 +14,9 @@ import UIKit
   final public var currentArticle: SpeechKit.Article? {
     get
   }
+  final public var isPlayingAd: Swift.Bool {
+    get
+  }
   weak final public var delegate: SpeechKit.PlayerDelegate?
   public static let shared: SpeechKit.Player
   @objc override convenience dynamic public init()
@@ -46,6 +49,15 @@ public enum SpeechKitApiError : Swift.Error {
     get
   }
 }
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers final public class PlayerView : UIKit.UIView {
+  final public func clearPlayer()
+  @objc deinit
+}
+extension PlayerView : SpeechKit.PlayerDelegate {
+  final public func player(player: SpeechKit.Player, changedState state: SpeechKit.Player.State)
+  final public func player(player: SpeechKit.Player, updatedProgression time: Foundation.TimeInterval, duration: Foundation.TimeInterval)
+  final public func playerDidPlayToEnd(_ player: SpeechKit.Player)
+}
 public protocol PlayerDelegate : AnyObject {
   func player(player: SpeechKit.Player, changedState state: SpeechKit.Player.State)
   func player(player: SpeechKit.Player, updatedProgression time: Foundation.TimeInterval, duration: Foundation.TimeInterval)
@@ -63,7 +75,7 @@ extension Player {
     case buffering
     case failed(Swift.Error)
     case paused
-    case playing
+    case playing(advertiser: Swift.String?, adUrl: Swift.String?)
   }
 }
 public struct Article : Swift.Decodable {
@@ -130,7 +142,7 @@ public enum ArticleIdentifier {
     case buffering
     case failed(Swift.Error)
     case paused
-    case playing
+    case playing(advertiser: Swift.String?, adUrl: Swift.String?)
   }
   final public var state: SpeechKit.AudioPlayer.State {
     get
