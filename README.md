@@ -24,7 +24,7 @@ SpeechKit.Player.shared.delegate = self
 
 OR [optional]: using the built-in Speechkit UI:
 
-First place a PlayerView (UIView sublass) into your view heirachy (eg. via interface builder). Then:
+First place a PlayerView (UIView sublass) into your view heirachy (if you are doing this via interface builder, make sure to set Custom Class to `PlayerView` with Module `SpeechKit`). Then:
 ``` Swift
     
     @IBOutlet weak var playerView: PlayerView!
