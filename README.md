@@ -1,6 +1,6 @@
 # Quick Start
 
-`SpeechKit` is available for installation using the Cocoa dependency manager [CocoaPods](http://cocoapods.org/). 
+`BeyondWords` is available for installation using the Cocoa dependency manager [CocoaPods](http://cocoapods.org/). 
 
 ```ruby
 # CocoaPods
