@@ -1,9 +1,18 @@
 # Quick Start
 
-`BeyondWords` is available for installation using the Cocoa dependency manager [CocoaPods](http://cocoapods.org/). 
+`BeyondWords` is available for installation using [Swift Package Manager](https://www.swift.org/package-manager/) and Cocoa dependency manager [CocoaPods](http://cocoapods.org/).
+
+### Swift Package Manager
+
+Search for the repository url in the build in `Package Dependencies` screen:
+
+```
+https://github.com/SpeechKit/speechkit-ios-sdk-public.git
+```
+
+### Cocoapods
 
 ```ruby
-# CocoaPods
 pod "SpeechKit", :git => "https://github.com/SpeechKit/speechkit-ios-sdk-public.git"
 ```
 
@@ -12,19 +21,20 @@ pod "SpeechKit", :git => "https://github.com/SpeechKit/speechkit-ios-sdk-public.
 To integrate the SDK you can follow these steps.
 
 Importing the framework.
+
 ``` Swift
- import SpeechKit
+ import BeyondWords
 ```
 
 Set the delegate for the player.
 
 ``` Swift
-SpeechKit.Player.shared.delegate = self
+BeyondWords.Player.shared.delegate = self
 ```
 
-OR [optional]: using the built-in Speechkit UI:
+OR [optional]: using the built-in BeyondWords UI:
 
-First place a PlayerView (UIView sublass) into your view heirachy (if you are doing this via interface builder, make sure to set Custom Class to `PlayerView` with Module `SpeechKit`). Then:
+First place a PlayerView (UIView sublass) into your view heirachy (if you are doing this via interface builder, make sure to set Custom Class to `PlayerView` with Module `BeyondWords`). Then:
 ``` Swift
     
     @IBOutlet weak var playerView: PlayerView!
@@ -34,7 +44,7 @@ First place a PlayerView (UIView sublass) into your view heirachy (if you are do
 override func viewDidLoad() {
     super.viewDidLoad()
 
-    SpeechKit.Player.shared.delegate = playerView
+    BeyondWords.Player.shared.delegate = playerView
 
     ...
 
@@ -44,11 +54,11 @@ override func viewDidLoad() {
 ### Fetching an article 
 
 ``` Swift
-let config = SpeechKit.Player.Config(
+let config = BeyondWords.Player.Config(
     projectId: "123",
     articleId: .podcastId("123")
 )
-SpeechKit.Player.shared.getArticle(with: config) { result in
+BeyondWords.Player.shared.getArticle(with: config) { result in
    switch result {
    case .success(let article):
        //Article has been fetched
@@ -66,7 +76,7 @@ canBePlayed checks the status of the media and if the article contains a valid m
 
 ``` Swift
 if article.canBePlayed {
-    SpeechKit.Player.shared.playArticle(article: article, shouldAutoPlay: true)
+    BeyondWords.Player.shared.playArticle(article: article, shouldAutoPlay: true)
 }
 ```
 
@@ -76,22 +86,22 @@ if article.canBePlayed {
 if shouldAutoPlay is true, the player will start automatically playing the article as soon as it starts loading the buffer.
 
 ``` Swift
-SpeechKit.Player.shared.playArticle(article: article, shouldAutoPlay: true)
+BeyondWords.Player.shared.playArticle(article: article, shouldAutoPlay: true)
 ```
 
 
 ### Resume/pause the article
 
 ``` Swift
-SpeechKit.Player.shared.resume()
-SpeechKit.Player.shared.pause()
+BeyondWords.Player.shared.resume()
+BeyondWords.Player.shared.pause()
 ```
 
 
 ### Getting the progress and events.
 
 ``` Swift
-extension ViewController: SpeechKit.PlayerDelegate {
+extension ViewController: BeyondWords.PlayerDelegate {
     func player(player: Player, changedState state: Player.State) {
         switch state {
         case .readyToPlay:

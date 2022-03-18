@@ -63,6 +63,10 @@ public enum BeyondWordsApiError : Swift.Error {
     get
     set
   }
+  @_Concurrency.MainActor(unsafe) final public var trackColor: UIKit.UIColor? {
+    get
+    set
+  }
   @_Concurrency.MainActor(unsafe) final public var textColor: UIKit.UIColor? {
     get
     set
