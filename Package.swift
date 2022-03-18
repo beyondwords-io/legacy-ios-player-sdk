@@ -15,7 +15,6 @@ let package = Package(
         
     ],
     targets: [
-        .target(name: "BeyondWords", dependencies: []),
         .binaryTarget(
             name: "BeyondWords",
             path: "BeyondWords.xcframework"
