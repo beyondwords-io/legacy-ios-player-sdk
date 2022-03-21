@@ -1,0 +1,186 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.6 (swiftlang-5.6.0.323.62 clang-1316.0.20.8)
+// swift-module-flags: -target arm64-apple-ios12.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name BeyondWords
+import AVFoundation
+@_exported import BeyondWords
+import Foundation
+import MediaPlayer
+import Swift
+import UIKit
+import _Concurrency
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers final public class Player : ObjectiveC.NSObject {
+  public struct Config {
+    public init(projectId: Swift.String, articleId: BeyondWords.ArticleIdentifier)
+  }
+  final public var currentArticle: BeyondWords.Article? {
+    get
+  }
+  final public var isPlayingAd: Swift.Bool {
+    get
+  }
+  weak final public var delegate: BeyondWords.PlayerDelegate?
+  public static let shared: BeyondWords.Player
+  @objc override convenience dynamic public init()
+  @objc deinit
+}
+extension BeyondWords.Player {
+  final public func getArticle(with config: BeyondWords.Player.Config, completion: @escaping (Swift.Result<BeyondWords.Article, Swift.Error>) -> Swift.Void)
+  final public func playArticle(article: BeyondWords.Article, shouldAutoPlay: Swift.Bool = false)
+  final public var currentTime: Swift.Double {
+    get
+  }
+  final public var duration: Swift.Double {
+    get
+  }
+  final public var isPlaying: Swift.Bool {
+    get
+  }
+  final public func resume()
+  final public func pause()
+  final public func seek(to seconds: Swift.Double)
+}
+public enum BeyondWordsApiError : Swift.Error {
+  case invalidReponse
+  case authenticationError
+  case badRequest
+  case decodableError
+  public static func == (a: BeyondWords.BeyondWordsApiError, b: BeyondWords.BeyondWordsApiError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) final public class PlayerView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) final public var buttonBackgroundColor: UIKit.UIColor? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) final public var buttonIconColor: UIKit.UIColor? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) final public var progressColor: UIKit.UIColor? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) final public var trackColor: UIKit.UIColor? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) final public var textColor: UIKit.UIColor? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) final public var logoColor: UIKit.UIColor? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) final public var islogoHidden: Swift.Bool {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) final public func clearPlayer()
+  @objc deinit
+}
+extension BeyondWords.PlayerView : BeyondWords.PlayerDelegate {
+  @_Concurrency.MainActor(unsafe) final public func player(player: BeyondWords.Player, changedState state: BeyondWords.Player.State)
+  @_Concurrency.MainActor(unsafe) final public func player(player: BeyondWords.Player, updatedProgression time: Foundation.TimeInterval, duration: Foundation.TimeInterval)
+  @_Concurrency.MainActor(unsafe) final public func playerDidPlayToEnd(_ player: BeyondWords.Player)
+}
+public protocol PlayerDelegate : AnyObject {
+  func player(player: BeyondWords.Player, changedState state: BeyondWords.Player.State)
+  func player(player: BeyondWords.Player, updatedProgression time: Foundation.TimeInterval, duration: Foundation.TimeInterval)
+  func playerDidPlayToEnd(_ player: BeyondWords.Player)
+}
+extension BeyondWords.PlayerDelegate {
+  public func player(player: BeyondWords.Player, changedState state: BeyondWords.Player.State)
+  public func player(player: BeyondWords.Player, updatedProgression time: Foundation.TimeInterval, duration: Foundation.TimeInterval)
+  public func playerDidPlayToEnd(_ player: BeyondWords.Player)
+}
+extension BeyondWords.Player {
+  public enum State {
+    case unknown
+    case readyToPlay
+    case buffering
+    case failed(Swift.Error)
+    case paused
+    case playing(advertiser: Swift.String?, adUrl: Swift.String?)
+  }
+}
+public struct Article : Swift.Decodable {
+  public struct CustomAd : Swift.Decodable {
+    public var defaultMedia: BeyondWords.Media? {
+      get
+    }
+    public init(from decoder: Swift.Decoder) throws
+  }
+  public struct Podcast : Swift.Decodable {
+    public let podcast_id: Swift.Int?
+    public let title: Swift.String?
+    public let author: Swift.String?
+    public let image: Foundation.URL?
+    public var defaultMedia: BeyondWords.Media? {
+      get
+    }
+    public var isMediaProcessed: Swift.Bool {
+      get
+    }
+    public init(from decoder: Swift.Decoder) throws
+  }
+  public let projectId: Swift.Int
+  public let podcast: BeyondWords.Article.Podcast?
+  public var canBePlayed: Swift.Bool {
+    get
+  }
+  public var hasPodcastURL: Swift.Bool {
+    get
+  }
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct Media : Swift.Decodable {
+  public enum State : Swift.String, Swift.Codable {
+    case unprocessed
+    case processed
+    case processing
+    case scheduled
+    case skipped
+    case handled
+    case error
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public let state: BeyondWords.Media.State
+  public let duration: Swift.Float?
+  public var isStream: Swift.Bool {
+    get
+  }
+  public init(from decoder: Swift.Decoder) throws
+}
+public enum ArticleIdentifier {
+  case url(Swift.String)
+  case podcastId(Swift.String)
+  case externalId(Swift.String)
+}
+@_hasMissingDesignatedInitializers final public class AudioPlayer {
+  public enum State {
+    case unknown
+    case readyToPlay
+    case buffering
+    case failed(Swift.Error)
+    case paused
+    case playing(advertiser: Swift.String?, adUrl: Swift.String?)
+  }
+  final public var state: BeyondWords.AudioPlayer.State {
+    get
+    set
+  }
+  @objc deinit
+}
+extension BeyondWords.BeyondWordsApiError : Swift.Equatable {}
+extension BeyondWords.BeyondWordsApiError : Swift.Hashable {}
+extension BeyondWords.Media.State : Swift.Equatable {}
+extension BeyondWords.Media.State : Swift.Hashable {}
+extension BeyondWords.Media.State : Swift.RawRepresentable {}

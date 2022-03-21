@@ -1,0 +1,11 @@
+framework module BeyondWords {
+  umbrella header "BeyondWords.h"
+
+  export *
+  module * { export * }
+}
+
+module BeyondWords.Swift {
+    header "BeyondWords-Swift.h"
+    requires objc
+}
