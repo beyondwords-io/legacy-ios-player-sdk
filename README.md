@@ -118,3 +118,31 @@ extension ViewController: BeyondWords.PlayerDelegate {
     }
 }
 ```
+
+### Player customisation
+
+Built in PlayerView can be customised to achieve the desired look and feel.
+Simply use your on values to set the available properties.
+
+``` Swift
+    @IBOutlet weak var playerView: PlayerView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        BeyondWords.Player.shared.delegate = playerView
+        
+        let contentColor = UIColor.white
+        let backgroundColor = UIColor.systemTeal
+        
+        playerView.backgroundColor = backgroundColor
+        playerView.layer.cornerRadius = 8
+        playerView.buttonBackgroundColor = contentColor
+        playerView.buttonIconColor = backgroundColor
+        playerView.progressColor = contentColor
+        playerView.trackColor = contentColor.withAlphaComponent(0.3)
+        playerView.textColor = contentColor
+        playerView.logoColor = contentColor
+        playerView.islogoHidden = false
+    }
+```
