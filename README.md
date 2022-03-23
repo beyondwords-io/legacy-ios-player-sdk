@@ -122,7 +122,7 @@ extension ViewController: BeyondWords.PlayerDelegate {
 ### Player customisation
 
 Built in PlayerView can be customised to achieve the desired look and feel.
-Simply use your on values to set the available properties.
+Simply use your own values to set the available properties.
 
 ``` Swift
     @IBOutlet weak var playerView: PlayerView!
