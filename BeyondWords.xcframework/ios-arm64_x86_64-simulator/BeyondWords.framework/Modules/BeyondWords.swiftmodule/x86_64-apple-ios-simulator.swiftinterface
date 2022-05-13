@@ -59,6 +59,10 @@ public enum BeyondWordsApiError : Swift.Error {
     get
     set
   }
+  @_Concurrency.MainActor(unsafe) final public var seekingButtonsColor: UIKit.UIColor? {
+    get
+    set
+  }
   @_Concurrency.MainActor(unsafe) final public var progressColor: UIKit.UIColor? {
     get
     set
@@ -71,11 +75,7 @@ public enum BeyondWordsApiError : Swift.Error {
     get
     set
   }
-  @_Concurrency.MainActor(unsafe) final public var logoColor: UIKit.UIColor? {
-    get
-    set
-  }
-  @_Concurrency.MainActor(unsafe) final public var islogoHidden: Swift.Bool {
+  @_Concurrency.MainActor(unsafe) final public var showsSeekingButtons: Swift.Bool {
     get
     set
   }
@@ -118,7 +118,7 @@ public struct Article : Swift.Decodable {
     public let podcast_id: Swift.Int?
     public let title: Swift.String?
     public let author: Swift.String?
-    public let image: Foundation.URL?
+    public let image: Swift.String?
     public var defaultMedia: BeyondWords.Media? {
       get
     }
