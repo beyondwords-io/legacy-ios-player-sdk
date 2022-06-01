@@ -18,7 +18,7 @@ let package = Package(
         .binaryTarget(
             name: "BeyondWords",
             url: "https://github.com/SpeechKit/speechkit-ios-sdk-public/blob/master/BeyondWords.xcframework.zip",
-            checksum: "69001f0fdb6236fe67cae70e0bde7eba223b908351c60f778d1768822f555f12"),
+            checksum: "0b2be661780998511871f6abfcf695e2a87290f75c906515df2694fe0304db00"),
         .binaryTarget(
             name: "BeyondWords",
             path: "BeyondWords.xcframework"
