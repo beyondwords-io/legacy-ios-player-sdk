@@ -6,11 +6,11 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		4WBnP+4OALKIWh/pCYuxhefw4Is=
+		LssucCWCq4077EtgzB8wqUyawLc=
 		</data>
 		<key>Headers/BeyondWords-Swift.h</key>
 		<data>
-		l7fhZX0rAEHiqsfFANnshClrccU=
+		hZdcvQNS2ZOWHjzz/VP7bT01NVc=
 		</data>
 		<key>Headers/BeyondWords.h</key>
 		<data>
@@ -18,31 +18,31 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		HkJY0f5la1C9fYEsoyYskdpCmDU=
+		rWGh76HFxEY/dZwJpHdXTnCBB1g=
 		</data>
 		<key>Modules/BeyondWords.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		x52Gwk2UfACK6x4SSOP59tGyN6E=
+		G2WBWP+r6wlkKhVhP9Zoas0TWIg=
 		</data>
 		<key>Modules/BeyondWords.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		L0rVm0bvK0e6JZ7Zh8zOGhLxpz8=
+		gt0byoMdTQdhaBNxmRaOBXQ0FE8=
 		</data>
 		<key>Modules/BeyondWords.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		+3UH/fofunsH7Ef2XeVMOZvfsUM=
+		JvdM+NVnC+jvGfH+XdO4G/bZvYw=
 		</data>
 		<key>Modules/BeyondWords.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		Ij7uz5Go+S9VPPZH9VqkehIxslo=
+		SwhioEZV/pdd53X4/0vhjp91tLA=
 		</data>
 		<key>Modules/BeyondWords.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		bB090NUgEEnJNDrpUtEwG3JLWN0=
+		x5V2KbXNZiZZkcU9Bo789/RNTZM=
 		</data>
 		<key>Modules/BeyondWords.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		KYwvprPrA5sKRiudjeOHuPQWkic=
+		uvw0HdoDo6fdG7YhwPWZs3jqJGU=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -50,7 +50,7 @@
 		</data>
 		<key>PlayerView.nib</key>
 		<data>
-		6uI1iMIb/tXFfP2mQvXuCLLoA7o=
+		pEIfIKn120uZ0jX24tMfYbZ8woY=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -59,14 +59,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			XMcESSylrO1s5hYhRK887fznNkB1bWlXnAe22FEqcuk=
+			0cXphGzMTU0nYEogf1ZtOZigUnmcCoxyX5/lpK7mvZA=
 			</data>
 		</dict>
 		<key>Headers/BeyondWords-Swift.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			nf6LguOeYcshPeIVDfzYGyUrSwIcyKtOzocZvY4bV7g=
+			4BFel8vf2oT8+vW3rpJ9h0CGigYRyUqc3xcfUfPus2s=
 			</data>
 		</dict>
 		<key>Headers/BeyondWords.h</key>
@@ -80,42 +80,42 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			NOc/9njHqncjY7DDDD0GtT4LsaEUsBmOQoD0bxHMzs8=
+			w8P9HTzCN6iEfAPHACTw4Zo5R+2Nlz9qCZ7HS8lxO4A=
 			</data>
 		</dict>
 		<key>Modules/BeyondWords.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			6dClbXDBMOJZHH+gvKmcPBiAcC3ki0KjH2cpxvqoNng=
+			tC2QLqwL4Q5aOidSGHqr6H/VZ4DBhiLZCwYrrMcw4og=
 			</data>
 		</dict>
 		<key>Modules/BeyondWords.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZmespuUNNbOWRRPc5qQfcORstGAlfbWs/m8EgYAzq08=
+			+rM+5fNu0hU22+fSjDf0dKlsYjJTNbk2q2wDsEMUg8o=
 			</data>
 		</dict>
 		<key>Modules/BeyondWords.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			zc6lTfq1PlGq2gI91P0NjHIdrDXBc8RcjLdGYuhsRPA=
+			96XX0lVkZXmqixrx/QuDDXsOxzF9aA1aR/Vdlm6OwwE=
 			</data>
 		</dict>
 		<key>Modules/BeyondWords.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ggPxAA8Enat1gH8ZKKQCs9y8AZj3Db8XRw2Ip7LnDxs=
+			WYcUyjtGmskW55Y7a+vMTDa7jQCdGuMcUQsfAEfUVyc=
 			</data>
 		</dict>
 		<key>Modules/BeyondWords.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			54OpC3q9Zm9lBrYykU1ZRe9svIUZ5N1eenz02mz6Gnw=
+			kh8adrS0zJSrgv9WBP/qM1jUv10XVzSQdf9eM9RKvWM=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -129,7 +129,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			vTdG4tF4R//6krJ8dWgMms1deN1sOc8Rzp7SltCFmoA=
+			0cEgsgPeUag4RnxhO93Xc34sfoR9nBpBGJXlyuC+tVs=
 			</data>
 		</dict>
 	</dict>
