@@ -332,7 +332,6 @@ Information about the podcast to be played.
 
 ## Media
 Information about playable asset.
-
 <br>`state` State: Current state of the media. Cases: `unprocessed`, `processed`, `processing`, `scheduled`, `skipped`, `handled`, `error`
 <br>`duration` Float?: Duration of the asset
 <br>`isStream` Bool: Checks if the media has `m3u8` or `m3u` extension
