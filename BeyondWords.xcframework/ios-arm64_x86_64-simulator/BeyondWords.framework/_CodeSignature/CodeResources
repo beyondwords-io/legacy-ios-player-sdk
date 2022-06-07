@@ -22,27 +22,27 @@
 		</data>
 		<key>Modules/BeyondWords.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		G2WBWP+r6wlkKhVhP9Zoas0TWIg=
+		RPaRNt13Om5B034SzlCusoHifLM=
 		</data>
 		<key>Modules/BeyondWords.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		gt0byoMdTQdhaBNxmRaOBXQ0FE8=
+		0lRTi281QlZSOmv0fjMJKhvbEkY=
 		</data>
 		<key>Modules/BeyondWords.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		JvdM+NVnC+jvGfH+XdO4G/bZvYw=
+		+hg6kJbLn1VnqyQWYaMFyysL0aw=
 		</data>
 		<key>Modules/BeyondWords.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		SwhioEZV/pdd53X4/0vhjp91tLA=
+		KiNX6Xzf0V2+UwoCdXYgJS5DbHY=
 		</data>
 		<key>Modules/BeyondWords.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		x5V2KbXNZiZZkcU9Bo789/RNTZM=
+		Mu8zN4iObxdkZowsoLVD7yQmmJA=
 		</data>
 		<key>Modules/BeyondWords.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		uvw0HdoDo6fdG7YhwPWZs3jqJGU=
+		puG9fDhASrBXfqwIyBD/8VDXSk0=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -50,7 +50,7 @@
 		</data>
 		<key>PlayerView.nib</key>
 		<data>
-		pEIfIKn120uZ0jX24tMfYbZ8woY=
+		cQgXiKLVpoYtZgToUNq1+4FaU+Q=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -80,42 +80,42 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			w8P9HTzCN6iEfAPHACTw4Zo5R+2Nlz9qCZ7HS8lxO4A=
+			Ig075rw5JfRO8P0hnWOXEj5/lop6H/+8fHjNWXPZD/w=
 			</data>
 		</dict>
 		<key>Modules/BeyondWords.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			tC2QLqwL4Q5aOidSGHqr6H/VZ4DBhiLZCwYrrMcw4og=
+			3NTwlIKWPKmY0kczTqngZetN+O9iCRxmmmPww3SyUwg=
 			</data>
 		</dict>
 		<key>Modules/BeyondWords.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			+rM+5fNu0hU22+fSjDf0dKlsYjJTNbk2q2wDsEMUg8o=
+			MQMCoUTXhqty4Sx7HB3wCMtvT+PitNlbrZq0Ua5BmtQ=
 			</data>
 		</dict>
 		<key>Modules/BeyondWords.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			96XX0lVkZXmqixrx/QuDDXsOxzF9aA1aR/Vdlm6OwwE=
+			no5nGYKGiDKtoW67AGF6HuKR7qJrNhBYcwOiGL1hC/U=
 			</data>
 		</dict>
 		<key>Modules/BeyondWords.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			WYcUyjtGmskW55Y7a+vMTDa7jQCdGuMcUQsfAEfUVyc=
+			LFKVK6ga59m7xY3ogjK2ATV5WzujxBPj4nBTmGZN5cE=
 			</data>
 		</dict>
 		<key>Modules/BeyondWords.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			kh8adrS0zJSrgv9WBP/qM1jUv10XVzSQdf9eM9RKvWM=
+			DAijzQe9FQYEuWI1VQSmNZ5jyt8LFHRnbA9sAcwA7gg=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -129,7 +129,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			0cEgsgPeUag4RnxhO93Xc34sfoR9nBpBGJXlyuC+tVs=
+			KKFmSxHSX5yuLnk/61ehyJOsCreTBLcsUIVApCuSho0=
 			</data>
 		</dict>
 	</dict>
